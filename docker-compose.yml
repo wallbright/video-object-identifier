@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  python-opencv-ffmpeg:
+    build: .
+    command: python /resources/analyze.py
+    #command: tail -f /dev/null
+    volumes:
+      - ./input:/input
+      - ./output:/output
+    env_file: "analyze.env"
